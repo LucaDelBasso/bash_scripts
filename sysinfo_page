@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# sysinfo_page - A script to produce an html file
+
+# <<- tells cat to ignore indents so we can format the file without worrying about tabs
+
+#### Constants
+
+TITLE="System Information for $HOSTNAME"
+RIGHT_NOW="$(date +"%x %r %z")"
+TIME_STAMP="Updated on $RIGHT_NOW by $USER"
+
+#### Functions
+
+system_info()
+{
+
+}
+
+show uptime()
+{
+
+}
+
+drive_space()
+{
+
+}
+
+home_space()
+{
+
+}
+
+
+#### Main
+
+cat <<- _EOF_
+    <html>
+       <head>
+         <title>
+           $TITLE
+         </title>
+       </head>
+
+       <body>
+         <h1> $TITLE </h1>
+           <p> $TIME_STAMP </p>
+           $(system_info)
+           $(show_uptime)
+           $(drive_space)
+           $(home_space)
+       </body>
+    </html>
+_EOF_
