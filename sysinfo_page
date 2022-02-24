@@ -14,22 +14,22 @@ TIME_STAMP="Updated on $RIGHT_NOW by $USER"
 
 system_info()
 {
-
+    echo "a stub function"
 }
 
-show uptime()
+show_uptime()
 {
-
+    echo "a stub function"
 }
 
 drive_space()
 {
-
+    echo "a stub function"
 }
 
 home_space()
 {
-
+    echo "a stub function"
 }
 
 
