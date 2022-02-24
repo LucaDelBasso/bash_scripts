@@ -19,7 +19,7 @@ system_info()
 
 show_uptime()
 {
-    echo "<h2> System uptime </h2>"
+    echo "<h2> System Uptime </h2>"
     echo "<pre>"
     uptime
     echo "</pre>"
@@ -27,12 +27,19 @@ show_uptime()
 
 drive_space()
 {
-    echo "a stub function"
+    echo "<h2> Filesystem Space"
+    echo "<pre>"
+    df
+    echo "</pre"
 }
 
 home_space()
 {
-    echo "a stub function"
+    echo "<h2> Home Directory Space by User </h2>"
+    echo "<pre>"
+    echo "Bytes Directory"
+    du -s /home/* | sort -nr
+    echo "</pre>"
 }
 
 
