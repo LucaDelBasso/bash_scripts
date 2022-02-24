@@ -19,7 +19,10 @@ system_info()
 
 show_uptime()
 {
-    echo "a stub function"
+    echo "<h2> System uptime </h2>"
+    echo "<pre>"
+    uptime
+    echo "</pre>"
 }
 
 drive_space()
