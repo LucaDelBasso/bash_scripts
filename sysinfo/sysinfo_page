@@ -12,9 +12,16 @@ TIME_STAMP="Updated on $RIGHT_NOW by $USER"
 
 #### Functions
 
+number_fact()
+{
+    python sysinfo/json_parse.py
+}
+
+
 system_info()
 {
-    echo "a stub function"
+    echo "<h2> System Release Info </h2>"
+    echo "<p> Function not yet implemented </p>"
 }
 
 show_uptime()
@@ -60,6 +67,13 @@ cat <<- _EOF_
            $(show_uptime)
            $(drive_space)
            $(home_space)
-       </body>
+         <h1> A number Fact for You </h1>
+            $(number_fact)
+         <p>
+           <small>
+              a product of the free numbers api from <a href="https://rapidapi.com/divad12/api/numbers-1/"> rapidapi.com </a>
+           </small>
+         </p>
+         </body>
     </html>
 _EOF_
