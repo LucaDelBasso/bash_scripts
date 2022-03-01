@@ -14,7 +14,7 @@ TIME_STAMP="Updated on $RIGHT_NOW by $USER"
 
 number_fact()
 {
-    python sysinfo/json_parse.py
+    python /home/luca/bin/sysinfo/json_parse.py
 }
 
 
@@ -43,10 +43,14 @@ drive_space()
 home_space()
 {
     echo "<h2> Home Directory Space by User </h2>"
-    echo "<pre>"
-    echo "Bytes Directory"
-    du -s /home/* | sort -nr
-    echo "</pre>"
+    if [ "$(id -u)" = "0" ]; then
+        echo "<pre>"
+        echo "Bytes Directory"
+        du -s /home/* | sort -nr
+        echo "</pre>"
+    else
+        echo "Sudo did not run this script, info not available."
+    fi
 }
 
 
