@@ -1,0 +1,12 @@
+#!/bin/bash
+
+number=
+
+
+#it is good practice to put double quotes around parameters that undergo expansion
+if [ "$number" = "1" ]; then 
+    echo "Number equals 1"
+else
+    echo "Number does not equal 1"
+fi
+
