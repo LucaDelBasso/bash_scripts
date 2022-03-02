@@ -1,12 +1,19 @@
 #!/bin/bash
+# add -x to the line above to print trace
+#or uncomment the line below
+#set -x #turn on tracing
 
+#number= is valid syntax, just an empty variable
 number=
 
-
-#it is good practice to put double quotes around parameters that undergo expansion
+# it is good practice to put double quotes around parameters that
+# undergo expansion. This then evaluates to '' = 1  instead of
+# a '=: unary operator expected' error
+ 
 if [ "$number" = "1" ]; then 
     echo "Number equals 1"
 else
     echo "Number does not equal 1"
 fi
 
+#set +x turn off tracing
