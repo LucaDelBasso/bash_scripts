@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# -n flag causes cursor to stay on the same line.
+echo -n "Enter some text > "
+read text # defaults to REPLY if no var given.
+echo "You entered: $text"
+
+
+#another way of doing it
+read -p "Enter some text > " text
+echo "You entered: $text"
