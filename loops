@@ -1,0 +1,17 @@
+#!/bin/bash
+
+number=0
+echo "This is a while loop"
+# number -lt (less than) 10
+while [ "$number" -lt 10 ]; do
+    echo "Number = $number"
+    number=$((number + 1))
+done
+
+number=0
+echo "This is an until loop"
+# number -ge greater than or equal to
+until [ "$number" -ge 10 ]; do
+    echo "Number = $number"
+    number=$((number + 1))
+done
