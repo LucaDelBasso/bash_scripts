@@ -1,0 +1,13 @@
+#!/bin/bash
+
+read -p "Enter a number between 1 and 3 inclusive. > " character
+
+case $character in
+    1 ) echo "You entered a 1."
+        ;;
+    2 ) echo "You entered a 2."
+        ;;
+    3 ) echo "You entered a 3."
+        ;;
+    * ) echo "Can't you read?"
+esac
