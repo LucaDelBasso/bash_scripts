@@ -1,11 +1,25 @@
 #!/bin/bash
 
 # -n flag causes cursor to stay on the same line.
-echo -n "Enter some text > "
-read text # defaults to REPLY if no var given.
-echo "You entered: $text"
+#echo -n "Enter some text > "
+#read text # defaults to REPLY if no var given.
+#echo "You entered: $text"
 
 
 #another way of doing it
 read -p "Enter some text > " text
 echo "You entered: $text"
+
+#read -t followed by an int provides automatic timeout.
+
+echo -n "Type something, quick! "
+if read -t 3 response ; then
+    echo "phew, close one!"
+else
+    echo -e "\nSorry, you are bad!"
+fi
+
+#-s does not display input, -p specifiy a prompt
+read -sp "Tell me a secret... " secret 
+
+echo -e "\nYour secret is: $secret"
