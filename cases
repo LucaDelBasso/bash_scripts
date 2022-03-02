@@ -1,5 +1,10 @@
 #!/bin/bash
 
+## format of a case
+## case word in
+##    patterns ) commands ;;
+## esac
+
 read -p "Enter a number between 1 and 3 inclusive. > " character
 
 case $character in
@@ -11,3 +16,5 @@ case $character in
         ;;
     * ) echo "Can't you read?"
 esac
+
+

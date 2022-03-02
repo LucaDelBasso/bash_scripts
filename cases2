@@ -1,0 +1,14 @@
+#!/bin/bash
+
+read -p "Type in a digit or a letter > " character
+case $character in
+                                #letter check
+    [[:lower:]] | [[:upper:]] ) echo "Nice, $character is a letter. "
+                              ;;
+                                #digit check
+    [0-9] )                     echo "cool, $character is a number."
+                              ;;
+                                #anything else
+    * )                         echo ":/ , you dont get it do you"
+                              ;;
+esac
