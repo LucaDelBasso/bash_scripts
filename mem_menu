@@ -1,5 +1,12 @@
 #!/bin/bash
 
+press_enter()
+{
+    echo -en "\nPress Enter to continue"
+    read
+    clear
+}
+
 selection=
 until [ "$selection" = 0 ]; do
     echo "
@@ -15,6 +22,6 @@ until [ "$selection" = 0 ]; do
         1 ) df ;;
         2 ) free ;;
         0 ) exit ;;
-        * ) echo "Please make a valid selection 1, 2, or 0"
+        * ) echo "Please make a valid selection 1, 2, or 0" ; press_enter
     esac
 done
