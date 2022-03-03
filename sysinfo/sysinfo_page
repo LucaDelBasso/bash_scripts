@@ -14,7 +14,7 @@ TIME_STAMP="Updated on $RIGHT_NOW by $USER"
 
 number_fact()
 {
-    python /home/luca/bin/sysinfo/json_parse.py
+    python json_parse.py
 }
 
 
@@ -54,9 +54,10 @@ home_space()
 }
 
 
-#### Main
 
-cat <<- _EOF_
+write_page()
+{
+    cat <<- _EOF_
     <html>
        <head>
          <title>
@@ -81,3 +82,43 @@ cat <<- _EOF_
          </body>
     </html>
 _EOF_
+}
+
+usage()
+{
+    echo "usage: sysinfo [[[-f file] [-i]] | [-h]]"
+}
+
+##### Main
+
+interactive=
+filename=sysinfo_page.html
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -f | --file )             shift
+                                  filename=$1
+                                  ;;
+        -i | --interactive )      interactive=1
+         			  ;;
+	-h | --help )		  usage
+				  exit
+				  ;;
+	* ) 			  usage
+				  exit 1
+    esac
+    shift
+done
+
+# Test code to test interactive
+
+if [ "$interactive" = "1" ]; then
+    echo "interactive is on."
+else
+    echo "interactive is off."
+fi
+echo "output file = $filename"
+
+# Write page (comment out until testing is complete)
+
+# write_page > $filename
