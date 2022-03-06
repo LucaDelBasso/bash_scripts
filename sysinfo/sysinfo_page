@@ -113,12 +113,25 @@ done
 # Test code to test interactive
 
 if [ "$interactive" = "1" ]; then
-    echo "interactive is on."
-else
-    echo "interactive is off."
-fi
-echo "output file = $filename"
+    response=
 
+    read -p "Enter name of output file [$filename] > " response
+    if [ -n "$response" ]; then
+	filename="$response"
+    fi
+
+    if [ -f $filename ]; then
+	echo -n "Output file exists, overwrite? [Y/n] > "
+	read response
+	if [ "$response" != "y" ] && [ "$response" != "" ]; then
+	    echo "Exiting program."
+	    exit 1
+	fi
+        echo "Overwriting file $filename"
+    fi
+fi
 # Write page (comment out until testing is complete)
 
 # write_page > $filename
+
+
